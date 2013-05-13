@@ -1,0 +1,8 @@
+development: &default
+  adapter: sqlite3
+  database: db/development.sqlite3
+  min_messages: WARNING
+
+test: &test
+  <<: *default
+  database: copycopter_test
