@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'dynamic_form', '1.1.4'
 gem 'flutie', '1.3.3'
@@ -10,6 +10,7 @@ gem 'rails', '3.2.6'
 gem 'thin', '1.3.1'
 gem 'yajl-ruby', '1.1.0', :require => 'yajl'
 gem "jquery-rails", "1.0.19"
+gem 'mysql2'
 
 group :assets do
   gem 'sass-rails', "~> 3.2.5"
@@ -18,12 +19,19 @@ group :assets do
   gem "yui-compressor"
 end
 
+group :deploy do
+  gem "mina", :git => "git://github.com/nadarei/mina.git"
+  gem 'mina_extensions'
+end
+
 
 group :development, :test do
   gem 'foreman', '0.40.0'
   gem 'launchy', '2.0.5'
   gem 'rspec-rails', '2.8.1'
   gem 'spork', '0.9.0'
+  gem "mina", :git => "git://github.com/nadarei/mina.git"
+  gem 'mina_extensions'
 end
 
 group :test do
